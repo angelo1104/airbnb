@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import ExploreNearby from "../components/ExploreNearby";
@@ -18,11 +17,6 @@ export default function Home({ explore, liveAnywhere }) {
 
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Header />
 
       <Loader show={show} />
