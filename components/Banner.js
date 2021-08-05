@@ -23,6 +23,7 @@ const Title = styled.h1`
   font-size: 55px;
   font-weight: 900;
   margin-bottom: 15px;
+  line-height: 1.3;
 `;
 
 function Banner() {

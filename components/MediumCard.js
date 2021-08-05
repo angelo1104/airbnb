@@ -12,7 +12,12 @@ function MediumCard({
 }) {
   return (
     <Container>
-      <Image src={image} width={300} height={400} className={"rounded-2xl"} />
+      <Image
+        src={image}
+        width={300}
+        height={400}
+        className={"rounded-2xl imager"}
+      />
       <p className={"m-2 text-xl font-bold"}>{text}</p>
     </Container>
   );

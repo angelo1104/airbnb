@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SmallCard from "./SmallCard";
 import MediumCard from "./MediumCard";
+import LargeCard from "./LargeCard";
 
 const Title = styled.h2`
   font-size: 40px;
@@ -49,6 +50,8 @@ function ExploreNearby({ explore, liveAnywhere }) {
         ))}
       </CardsContainer>
 
+      <LargeCard dark />
+
       <Title>Live anywhere</Title>
 
       <MediumContainer>
@@ -56,6 +59,13 @@ function ExploreNearby({ explore, liveAnywhere }) {
           <MediumCard image={card?.img} key={index} text={card?.title} />
         ))}
       </MediumContainer>
+
+      <LargeCard
+        nature
+        title={"The Greatest Outdoors"}
+        subtitle={"Wishlists curated by Aribnb."}
+        buttonText={"Get inspired"}
+      />
     </div>
   );
 }
