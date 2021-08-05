@@ -9,7 +9,7 @@ const ButtonContainer = styled.button`
   cursor: pointer;
 `;
 
-function Button({ children, dark, styles }) {
+function Button({ children, dark, styles, onClick }) {
   return (
     <ButtonContainer
       style={{
@@ -17,6 +17,7 @@ function Button({ children, dark, styles }) {
         color: dark ? "white" : "#222",
         ...styles,
       }}
+      onClick={onClick}
     >
       {children}
     </ButtonContainer>

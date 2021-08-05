@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
+import Rickroll from "../utils/rickroll";
 
 const Container = styled.div`
   background: url("https://a0.muscache.com/im/pictures/e4a2a61c-589f-4e49-b3b8-968a6bc23389.jpg?im_w=2560");
@@ -32,7 +33,7 @@ function Banner() {
       <Wrapper>
         <Title>Olympian & Paralympian Online Experiences</Title>
 
-        <Button>Explore now</Button>
+        <Button onClick={Rickroll}>Explore now</Button>
       </Wrapper>
     </Container>
   );

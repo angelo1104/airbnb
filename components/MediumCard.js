@@ -14,8 +14,8 @@ function MediumCard({
     <Container>
       <Image
         src={image}
-        width={300}
-        height={400}
+        width={320}
+        height={320}
         className={"rounded-2xl imager"}
       />
       <p className={"m-2 text-xl font-bold"}>{text}</p>

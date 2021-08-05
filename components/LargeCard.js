@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
+import Rickroll from "../utils/rickroll";
 
 const Container = styled.div`
   display: flex;
@@ -58,7 +59,9 @@ function LargeCard({
       <Wrapper>
         <Title style={{ color: dark ? "white" : "#222" }}>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
-        <Button dark={!dark}>{buttonText}</Button>
+        <Button dark={!dark} onClick={Rickroll}>
+          {buttonText}
+        </Button>
       </Wrapper>
     </Container>
   );
