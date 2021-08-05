@@ -59,7 +59,9 @@ function Header() {
         </div>
 
         <div
-          className={`flex justify-between items-center ml-5 mx-3 border-2 border-gray-500 p-2 rounded-full bg-white text-gray-500`}
+          className={`flex justify-between items-center ml-5 mx-3 ${
+            show && "border-2 border-gray-500"
+          } p-2 rounded-full bg-white text-gray-500`}
         >
           <Menu className={"mx-2"} />
           <AccountCircle />
