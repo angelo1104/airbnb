@@ -63,7 +63,7 @@ function ExploreNearby({ explore, liveAnywhere }) {
       <LargeCard
         nature
         title={"The Greatest Outdoors"}
-        subtitle={"Wishlists curated by Aribnb."}
+        subtitle={"Wishlists curated by Airbnb."}
         buttonText={"Get inspired"}
       />
     </div>
