@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
-import styled from "styled-components";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
 import axios from "axios";
 import InfoCard from "../components/InfoCard";
 import Head from "next/head";
-
-const Container = styled.div`
-  margin-top: 100px;
-  padding: 40px;
-`;
+import Map from "../components/Map";
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -37,8 +32,8 @@ function Search({ searchResults }) {
           guests > 1 ? "guests" : "guest"
         }`}
       />
-      <Container className={"flex text-gray-800"}>
-        <section className={"p-3"}>
+      <div className={"flex text-gray-800"}>
+        <section className={"p-3 pl-[30px] mt-[100px]"}>
           <p className={"text-xs"}>
             300+ Stays - {range} - for {guests}{" "}
             {guests > 1 ? "guests" : "guest"}
@@ -49,7 +44,7 @@ function Search({ searchResults }) {
 
           <div
             className={
-              "hidden lg:flex justify-between whitespace-nowrap text-gray-800 my-3"
+              "hidden lg:flex spcae-3 whitespace-nowrap text-gray-800 my-3"
             }
           >
             <p className={"cool-button"}>Cancellation flexibility</p>
@@ -57,41 +52,44 @@ function Search({ searchResults }) {
             <p className={"cool-button"}>Price</p>
             <p className={"cool-button"}>Rooms and beds</p>
           </div>
+
+          <div className={"flex flex-col"}>
+            {searchResults.map(
+              (
+                {
+                  img,
+                  description,
+                  long,
+                  lat,
+                  location,
+                  price,
+                  star,
+                  total,
+                  title,
+                },
+                index
+              ) => (
+                <InfoCard
+                  key={index}
+                  location={location}
+                  img={img}
+                  title={title}
+                  price={price}
+                  star={star}
+                  total={total}
+                  description={description}
+                  long={long}
+                  lat={lat}
+                />
+              )
+            )}
+          </div>
         </section>
-      </Container>
 
-      <div className={"flex flex-col"}>
-        {searchResults.map(
-          (
-            {
-              img,
-              description,
-              long,
-              lat,
-              location,
-              price,
-              star,
-              total,
-              title,
-            },
-            index
-          ) => (
-            <InfoCard
-              key={index}
-              location={location}
-              img={img}
-              title={title}
-              price={price}
-              star={star}
-              total={total}
-              description={description}
-              long={long}
-              lat={lat}
-            />
-          )
-        )}
+        <section className={"hidden xl:inline-flex xl:min-w-[600px]"}>
+          <Map searchResults={searchResults} />
+        </section>
       </div>
-
       <Footer />
     </div>
   );

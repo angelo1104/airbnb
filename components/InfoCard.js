@@ -16,7 +16,7 @@ function InfoCard({
   lat,
 }) {
   return (
-    <div className={"flex items-start my-3 p-3 pr-16"}>
+    <div className={"flex items-start my-3 p-3"}>
       <div className={"relative h-24, w-40 md:h-52 md:w-80 flex-shrink-8 mx-5"}>
         <Image
           src={img}
